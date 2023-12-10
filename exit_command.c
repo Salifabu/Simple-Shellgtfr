@@ -78,7 +78,6 @@ void _setenv(char **arv)
 	if (!arv[1] || !arv[2])
 {
 	perror(_getenv("_"));
-	return;
 }
 
 	for (i = 0; environ[i]; i++)
@@ -102,7 +101,6 @@ void _setenv(char **arv)
 	k++;
 }
 	environ[i][j + 1 + k] = '\0';
-	return;
 }
 }
 }
@@ -126,7 +124,6 @@ void _unsetenv(char **arv)
 	if (!arv[1])
 {
 	perror(_getenv("_"));
-	return;
 }
 	for (i = 0; environ[i]; i++)
 {
@@ -149,7 +146,6 @@ void _unsetenv(char **arv)
 	environ[i] = environ[i + 1];
 	i++;
 }
-	return;
 }
 }
 }
