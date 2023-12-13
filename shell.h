@@ -1,79 +1,63 @@
 #ifndef SHELL_H
 #define SHELL_H
 
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
-#include <sys/wait.h>
+#include <unistd.h>
 #include <sys/types.h>
-#include <errno.h>
-#include <stddef.h>
+#include <sys/wait.h>
 #include <sys/stat.h>
-#include <signal.h>
-#include <stdlib.h>
+#include <time.h>
+#include <stdbool.h>
 
-
-
-
-
-
-/**
- * struct mybuild - pointer to function with corresponding buildin command
- * @name: buildin command
- * @func: execute_cmd the buildin command
- */
-typedef struct mybuild
-{
-	char *name;
-	void (*func)(char **);
-} mybuild;
-
-void(*checkbuild(char **arv))(char **arv);
-int _atoi(char *s);
-void exits(char **arv);
-void env(char **arv);
-void _setenv(char **arv);
-void _unsetenv(char **arv);
-
-void free_arv(char **arv);
-char **sep_string(char *str, const char *delim);
-void execute_cmd(char **argv);
-void *_realloc(void *ptr, unsigned int old_size_p, unsigned int new_size);
-
-
+/* environment variables */
 extern char **environ;
+extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 
-/**
- *  * struct lists_p - Linked list containing PATH directories
- *   * @dir: directory in path
- *    * @p: pointer to next node
- *     */
-typedef struct lists_p
-{
-		char *dir;
-			struct lists_p *p;
-} lists_p;
+/* handle built ins */
+int checker(char **cmd, char *buf);
+void prompt_user(void);
+void handle_signal(int m);
+char **tokenizer(char *line);
+char *test_path(char **path, char *command);
+char *append_path(char *path, char *command);
+int handle_builtin(char **command, char *line);
+void exit_cmd(char **command, char *line);
 
+void print_env(void);
 
-char *_getenv(const char *name);
-lists_p *add_node_end(lists_p **head, char *str);
-lists_p *linkpath(char *path);
-char *_which(char *filename, lists_p *head);
-
-void free_list(lists_p *head);
-
-
-
-int _put_char(char c);
-void _pchar(char *str);
+/* string handlers */
+int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
-char *_strdup(char *str);
-char *_concatenate(char *name, char *sep, char *fvalue);
+int _strncmp(char *s1, char *s2, int n);
+char *_strdup(char *s);
+char *_strchr(char *s, char c);
+
+void execution(char *cp, char **cmd);
+char *find_path(void);
+
+/* helper function for efficient free */
+void free_buffers(char **buf);
+
+struct builtin
+{
+	char *env;
+	char *exit;
+} builtin;
+
+struct info
+{
+	int final_exit;
+	int ln_count;
+} info;
+
+struct flags
+{
+	bool interactive;
+} flags;
+
+#endif /* SHELL_H */
 
 
-
-
-
-
-#endif
