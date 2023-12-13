@@ -1,9 +1,2 @@
-0x16. C - Simple Shell
-Project to be done in teams of 2 people (your team: Nuha Adekunle, Abubakar Salifu)
-Write a UNIX command line interpreter.
-
-Usage: simple_shell
-Your Shell should:
-
-Display a prompt and wait for the user to type a command. A command line always ends with a new line.
+This simple shell project is an implementation of the shell created as the C language  final project  sprint at ALX Africa. As an ALX Software Engineering student. The purpose of this project is to build a simple shell software that enables users to command and interface with shell to provide the function for used. 
 
