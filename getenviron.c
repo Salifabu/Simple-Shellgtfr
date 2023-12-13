@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * _getenv - gets the fvalue of the global variable
- * @name: name of the global variable
- * Return: string of value
+ * _getenv - obtains fvalue of the global variable
+ * @name: global variable names
+ * Return: string values
  */
 char *_getenv(const char *name)
 {
@@ -90,8 +90,8 @@ lists_p *linkpath(char *path)
 	token = strtok(cpath, ":");
 	while (token)
 {
-		head = add_node_end(&head, token);
-		token = strtok(NULL, ":");
+	head = add_node_end(&head, token);
+	token = strtok(NULL, ":");
 }
 
 	return (head);
@@ -99,7 +99,7 @@ lists_p *linkpath(char *path)
 
 /**
  * _which - finds the pathname of a filename
- * @filename: name of file or command
+ * @filename: file name or command
  * @head: head of linked list of path directories
  * Return: pathname of filename or NULL if no match
  */

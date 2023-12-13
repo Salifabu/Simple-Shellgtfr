@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * exits - exits the shell with or without a return of status n
- * @arv: array of words of the entered line
+ * exits - shell is exited with or without a return of status n
+ * @arv: array of words of the inputed line
  */
 void exits(char **arv)
 {
@@ -24,7 +24,7 @@ void exits(char **arv)
 }
 
 /**
- * _atoi - converts a string into an integer
+ * _atoi - it convert a string into an integer
  *@s: pointer to a string
  *Return: the integer
  */
@@ -68,8 +68,8 @@ void env(char **arv __attribute__ ((unused)))
 }
 
 /**
- * _setenv - Initialize a new environment variable, or modify an existing one
- * @arv: array of entered words
+ * _setenv - a new environment variable initialized or modify an existing one
+ * @arv: array of inputed words
  */
 void _setenv(char **arv)
 {
@@ -114,8 +114,8 @@ void _setenv(char **arv)
 }
 
 /**
- * _unsetenv - Remove an environment variable
- * @arv: array of entered words
+ * _unsetenv - an environment variable is removed
+ * @arv: array of inputed words
  */
 void _unsetenv(char **arv)
 {
