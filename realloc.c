@@ -1,4 +1,7 @@
-#include “shell.h”
+
+#include "shell.h"
+#include <stdlib.h>
+#include <stddef.h>
 
 
 /**
