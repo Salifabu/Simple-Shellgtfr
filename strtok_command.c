@@ -2,10 +2,10 @@
 
 
 /**
- * sep_string - splits a string and makes it an array of pointers to words
+ * sep_string - to splits string, makes it arr of ptrs to words
  * @str: the string to be split
- * @delim: the delimiter
- * Return: array of pointers to words
+ * @delim: delimiter
+ * Return: array of ptrs to words
  */
 
 char **sep_string(char *str, const char *delim)
@@ -49,7 +49,7 @@ char **sep_string(char *str, const char *delim)
 
 /**
  * execute_cmd - execute_cmds a command
- * @argv: array of arguments
+ * @argv: the arr of arg
  */
 
 void execute_cmd(char **argv)

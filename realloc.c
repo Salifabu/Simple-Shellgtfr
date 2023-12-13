@@ -5,10 +5,10 @@
 
 
 /**
- * _realloc - Reallocates memory block
- * @ptr: previous pointer
- * @old_size_p: old size of previous pointer
- * @new_size: new size for our pointer
+ * _realloc - Reallocates mem block
+ * @ptr: previous ptr
+ * @old_size_p: old size of previous ptr
+ * @new_size: new size for our ptr
  * Return: New resized Pointer
  */
 
@@ -54,8 +54,8 @@ void *_realloc(void *ptr, unsigned int old_size_p, unsigned int new_size)
 }
 
 /**
- * free_arv - frees the array of pointers arv
- *@arv: array of pointers
+ * free_arv - to frees d array of pointers arv
+ *@arv: array of pointers or pointer
  */
 
 void free_arv(char **arv)
